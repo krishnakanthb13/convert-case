@@ -1,5 +1,36 @@
 # FluxText Release Notes
 
+## [v0.0.9] - 2026-04-03
+
+### 🚀 New Features
+
+- **Custom Saved Pipelines**: Save your most-used transformation chains with unique names. No more re-building complex logic from scratch every session.
+- **Persistent Storage**: All saved pipelines are automatically stored in your browser's local storage—ready to use whenever you return.
+- **Interactive Reordering**: Organize your pipeline collection with a native drag-and-drop interface for a truly custom workflow.
+
+### ⚡ Improvements
+
+- **Native File System Access**: 
+  - **Export Pipelines**: Export your entire collection to a `.json` file via a native "Save As" dialog.
+  - **Import Pipelines**: Easily restore or share pipeline collections with a native file picker (with fallback for non-supported browsers).
+- **Refined Modal UX**:
+  - Backdrop dismissal and auto-close on selection (Play button) make for a snappy, non-intrusive experience.
+  - Increased font sizes and improved visual hierarchy across the Saved Pipelines interface.
+- **Visual Distinction**: The new "Saved" button uses a distinct brand-success color for easy discoverability.
+
+### 📚 Documentation
+
+- Updated **README.md** with details on pipeline management and the new export/import flow.
+- Added technical details to **CODE_DOCUMENTATION.md** regarding state persistence and the File System Access API integration.
+- Revised **DESIGN_PHILOSOPHY.md** to reflect our move towards local data portability and reusable custom chains.
+
+### 🏗️ Infrastructure & Maintenance
+
+- Fixed build issues related to TypeScript `verbatimModuleSyntax` and type-only imports.
+- Reorganized the main layout to intelligently handle modal overlays while preserving workspace focus.
+
+---
+
 ## [v0.0.8] - 2026-04-03
 
 ### 🚀 Initial Public Release
