@@ -6,7 +6,7 @@ FluxText is built as an answer to the "generic text converter" problem—where u
 Most web-based text tools are ad-heavy, slow, and non-extensible. Developers shouldn't have to navigate 15 tabs or rely on external APIs just to convert some text.
 
 ## 2. Our Solution
-A locally-hosted, offline-first application that treats text as a **pipeline**. Instead of just one operation, FluxText allows you to chain multiple transformations—instantly, privately, and reliably.
+A locally-hosted, offline-first application that treats text as a **pipeline**. Instead of just one operation, FluxText allows you to chain multiple transformations and **save them as reusable custom chains**—instantly, privately, and reliably.
 
 ---
 
@@ -41,7 +41,7 @@ A locally-hosted, offline-first application that treats text as a **pipeline**. 
 ## 5. Trade-offs & Constraints
 - **Client-Side Only**: FluxText currently doesn't support complex server-side operations (like large-scale AI processing).
 - **Browser Memory**: Limited by browser performance for extremely large text blobs (e.g., hundreds of megabytes).
-- **No Cloud-Sync**: Currently, all settings and history are local to the browser's storage for maximum privacy.
+- **Offline Persistence**: Uses `localStorage` for cross-session storage. Users can export their data to JSON for portability, eliminating the need for cloud-sync while maintaining full privacy.
 
 ## 6. Real-World Workflow
 A developer copies a messy log message, hits `Ctrl+K` to search "Trim Whitespace", adds "Lowercase", and then "Base64 Encode". All in under 5 seconds—no page reloads, no ads.

@@ -13,9 +13,9 @@ FluxText is built on **React 19**, **TypeScript**, and **Vite**. It uses a state
 |-- frontend/
 |   |-- public/              # Static assets (favicons, manifest)
 |   |-- src/
-|       |-- components/      # UI components (CommandPalette, PipelineEditor, etc.)
+|       |-- components/      # UI components (CommandPalette, PipelineEditor, SavedPipelines, etc.)
 |       |-- core/            # Business logic / transformation engine
-|       |-- store/           # Global state management using Zustand
+|       |-- store/           # Zustand persistent storage (pipelines, theme, quick-actions)
 |       |-- assets/          # Project images and global icons
 |       |-- App.tsx          # Main application entry and layout
 |       |-- main.tsx         # React DOM mount point
@@ -31,9 +31,10 @@ FluxText is built on **React 19**, **TypeScript**, and **Vite**. It uses a state
 ## 3. High-Level Architecture
 FluxText follows a **Unidirectional Data Flow** pattern:
 
-1.  **State (Zustand)**: Stores `inputText`, `pipeline` (array of transformation names), and `theme`.
-2.  **Engine (Core)**: A functional transformation engine that takes `inputText` + `pipeline` and returns transformed `outputText`.
-3.  **UI (React)**: Renders the input textarea, the dynamic pipeline editor, and the real-time output.
+1.  **State (Zustand)**: Stores `inputText`, `pipeline`, `savedPipelines`, and `theme`. Persistent across sessions via `zustand/middleware`.
+2.  **Engine (Core)**: Pure functional text transformation engine.
+3.  **UI (React)**: Interactive components with native drag-and-drop and File System Access API integration.
+4.  **Persistence**: `localStorage` backup for zero-data usage.
 
 ---
 
@@ -41,12 +42,13 @@ FluxText follows a **Unidirectional Data Flow** pattern:
 
 | Module | Location | Description |
 | :--- | :--- | :--- |
-| **Transform Engine** | `src/core/engine.ts` | The core mapping logic that connects pipeline names to transformation functions. |
-| **Helper Maps** | `src/core/helpers.ts` | Extensive lookup tables for Morse, NATO, and complex Unicode font styles. |
-| **App Store** | `src/store/useAppStore.ts` | Zustand store managing `inputText`, `pipeline`, `theme`, and `isQuickActionsExpanded`. |
-| **Pipeline Editor** | `src/components/PipelineEditor.tsx` | Interactive UI for managing the chain of active transformations. |
-| **Quick Actions** | `src/components/QuickActions.tsx` | A categorized, collapsable grid of one-click transformation shortcuts. |
-| **Command Palette** | `src/components/CommandPalette.tsx` | Highly optimized keyboard interface using `useDeferredValue` and `memo` for instant searching. |
+| **Transform Engine** | `src/core/engine.ts` | Mapping logic for all transformations. |
+| **Helper Maps** | `src/core/helpers.ts` | Lookup tables for Morse, NATO, and complex Unicode font styles. |
+| **App Store** | `src/store/useAppStore.ts` | Persistent Zustand store manage pipelines, theme, and saved custom chains. |
+| **Pipeline Editor** | `src/components/PipelineEditor.tsx` | UI for active transformation chain and clear-all operations. |
+| **Quick Actions** | `src/components/QuickActions.tsx` | Collapsable grid of one-click transformation shortcuts. |
+| **Saved Pipelines** | `src/components/SavedPipelines.tsx` | Modal overlay for storing, reordering, and exporting/importing custom chains. |
+| **Command Palette** | `src/components/CommandPalette.tsx` | Optimized keyboard search interface. |
 
 ---
 

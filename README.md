@@ -15,6 +15,8 @@
 ## 🚀 Key Features
 
 - **Modular Pipeline**: Chain multiple transformations (e.g., *Trim* → *Lowercase* → *Base64*).
+- **Saved Pipelines**: Save your favorite transformation chains with custom names. Reorder them using drag-and-drop.
+- **Export/Import**: Backup your saved pipelines or share them as JSON files using the native File System Access API.
 - **Quick Access Tools**: Categorized, collapsible panel for one-click transformations.
 - **Command Palette**: `Ctrl + K` interface for lightning-fast operation, optimized for 50+ tools.
 - **Offline-First**: Runs entirely in your browser; no data ever leaves your machine.
