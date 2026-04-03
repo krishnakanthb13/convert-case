@@ -1,12 +1,9 @@
 import React from 'react';
 import { useAppStore } from '../store/useAppStore';
 import { Play, X, Trash2, Plus } from 'lucide-react';
-import { transforms } from '../core/engine';
 
 export function PipelineEditor() {
-  const { pipeline, removeTransformFromPipeline, setPaletteOpen, clearPipeline, addTransformToPipeline } = useAppStore();
-
-  const availableTransforms = Object.keys(transforms);
+  const { pipeline, removeTransformFromPipeline, setPaletteOpen, clearPipeline } = useAppStore();
 
   return (
     <div style={containerStyle}>
@@ -27,7 +24,7 @@ export function PipelineEditor() {
         </div>
       </div>
       
-      <div style={listStyle}>
+      <div className="custom-scrollbar" style={listStyle}>
         {pipeline.length === 0 ? (
           <div style={emptyStyle}>
             No transforms active. Press <kbd style={kbdStyle}>Ctrl+K</kbd> to add.
@@ -45,16 +42,6 @@ export function PipelineEditor() {
         )}
       </div>
       
-      <div style={quickActionsWrapStyle}>
-         <div style={quickActionsLabelStyle}>Quick Add:</div>
-         <div style={quickActionsStyle}>
-           {availableTransforms.map(tName => (
-             <button key={tName} style={quickBtnStyle} onClick={() => addTransformToPipeline(tName)}>
-               {tName.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())}
-             </button>
-           ))}
-         </div>
-      </div>
     </div>
   );
 }
@@ -159,38 +146,5 @@ const removeBtnStyle: React.CSSProperties = {
   color: 'var(--text-muted)',
   padding: '2px',
   borderRadius: '50%',
-};
-
-const quickActionsWrapStyle: React.CSSProperties = {
-  borderTop: '1px solid var(--border-subtle)',
-  padding: '12px 16px',
-  backgroundColor: 'var(--bg-main)',
-};
-
-const quickActionsLabelStyle: React.CSSProperties = {
-  fontSize: '0.8rem',
-  color: 'var(--text-muted)',
-  marginBottom: '8px',
-  textTransform: 'uppercase',
-  letterSpacing: '0.05em',
-  fontWeight: 600,
-};
-
-const quickActionsStyle: React.CSSProperties = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '8px',
-};
-
-const quickBtnStyle: React.CSSProperties = {
-  padding: '4px 10px',
-  backgroundColor: 'var(--bg-surface)',
-  border: '1px solid var(--border-subtle)',
-  borderRadius: '4px',
-  color: 'var(--text-secondary)',
-  fontSize: '0.85rem',
-  fontWeight: 600,
-  cursor: 'pointer',
-  transition: 'all 0.15s ease',
 };
 

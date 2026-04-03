@@ -3,6 +3,7 @@ import { useAppStore } from './store/useAppStore';
 import { runPipeline } from './core/engine';
 import { CommandPalette } from './components/CommandPalette';
 import { PipelineEditor } from './components/PipelineEditor';
+import { QuickActions } from './components/QuickActions';
 import { Copy, Download, FileText, Trash2, Moon, Sun } from 'lucide-react';
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
         </div>
         <div style={headerRightStyle}>
           <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: 600 }}>
-            Developer-First Text Transformation Engine
+            The All-in-One Offline Text Transformation Suite
           </span>
           <button style={actionBtnStyle} onClick={toggleTheme} title="Toggle Theme">
             {theme === 'dark' ? <Moon size={18} strokeWidth={2.5} /> : <Sun size={18} strokeWidth={2.5} />}
@@ -67,6 +68,7 @@ function App() {
 
       <main style={mainStyle}>
         <PipelineEditor />
+        <QuickActions />
 
         <div style={splitPaneStyle}>
           {/* INPUT PANE */}
@@ -129,7 +131,7 @@ const appContainerStyle: React.CSSProperties = {
 };
 
 const headerStyle: React.CSSProperties = {
-  padding: '16px 32px',
+  padding: '8px 32px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -161,17 +163,17 @@ const logoIconStyle: React.CSSProperties = {
 
 const mainStyle: React.CSSProperties = {
   flex: 1,
-  padding: '24px 32px',
+  padding: '12px 32px',
   display: 'flex',
   flexDirection: 'column',
-  gap: '24px',
+  gap: '16px',
 };
 
 const splitPaneStyle: React.CSSProperties = {
   display: 'flex',
   gap: '24px',
   flex: 1,
-  minHeight: '400px',
+  minHeight: '200px',
 };
 
 const paneStyle: React.CSSProperties = {
