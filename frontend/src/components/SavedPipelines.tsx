@@ -275,7 +275,7 @@ const itemStyle: React.CSSProperties = {
 };
 
 const nameStyle: React.CSSProperties = {
-  fontSize: '0.95rem',
+  fontSize: '0.88rem',
   fontWeight: 600,
   color: 'var(--text-primary)',
   marginBottom: '4px',
