@@ -9,16 +9,19 @@
 ## 🚀 Key Features
 
 - **Modular Pipeline**: Chain multiple transformations (e.g., *Trim* → *Lowercase* → *Base64*).
-- **Command Palette**: `Ctrl + K` interface for lightning-fast operation.
+- **Quick Access Tools**: Categorized, collapsible panel for one-click transformations.
+- **Command Palette**: `Ctrl + K` interface for lightning-fast operation, optimized for 50+ tools.
 - **Offline-First**: Runs entirely in your browser; no data ever leaves your machine.
 - **Real-Time Preview**: see output update instantly as you type or change the pipeline.
-- **Developer-Centric**: Built for speed with a clean, dark-first UI and syntax-highlighted feels.
+- **Themed UI**: Beautiful, dark-first design with custom scrollbars and glassmorphism.
 
 ## 🛠️ Transformations Included
 
-- **Case**: Lowercase, Uppercase, Sentence Case, Title Case, Capitalized Case, Alternating, Inverse.
-- **Cleaning**: Trim Whitespace, Remove Formatting.
-- **Encoding**: Base64 Encode/Decode, URL Encode/Decode.
+- **Cases**: Lowercase, Uppercase, Sentence, Title, Capitalized, Alternating, Inverse.
+- **Coding**: camelCase, pascalCase, snakeCase, kebabCase, constantCase, dotCase, pathCase.
+- **Styles**: Bold, Italic, Bubble, Square, Cursive, Monospace, Wide Text, Upside Down, Zalgo.
+- **Utils**: Morse Code, NATO Phonetic, ROT13, Binary, Slugify, Pig Latin, Strip Line Breaks, ASCII-to-Base64.
+- **Cleaning**: Trim Whitespace, Remove Formatting, Sort Lines.
 
 ---
 

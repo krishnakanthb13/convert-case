@@ -41,10 +41,12 @@ FluxText follows a **Unidirectional Data Flow** pattern:
 
 | Module | Location | Description |
 | :--- | :--- | :--- |
-| **Transform Engine** | `src/core/engine.ts` | Contains the mapping of all transformation functions (sentence case, base64, etc.). |
-| **App Store** | `src/store/useAppStore.ts` | Managed by Zustand; handles global state for input text, current pipeline, and UI theme. |
-| **Pipeline Editor** | `src/components/PipelineEditor.tsx` | UI for adding/removing/moving transformation steps. |
-| **Command Palette** | `src/components/CommandPalette.tsx` | Keyboard-driven interface for quickly searching and adding transformations. |
+| **Transform Engine** | `src/core/engine.ts` | The core mapping logic that connects pipeline names to transformation functions. |
+| **Helper Maps** | `src/core/helpers.ts` | Extensive lookup tables for Morse, NATO, and complex Unicode font styles. |
+| **App Store** | `src/store/useAppStore.ts` | Zustand store managing `inputText`, `pipeline`, `theme`, and `isQuickActionsExpanded`. |
+| **Pipeline Editor** | `src/components/PipelineEditor.tsx` | Interactive UI for managing the chain of active transformations. |
+| **Quick Actions** | `src/components/QuickActions.tsx` | A categorized, collapsable grid of one-click transformation shortcuts. |
+| **Command Palette** | `src/components/CommandPalette.tsx` | Highly optimized keyboard interface using `useDeferredValue` and `memo` for instant searching. |
 
 ---
 

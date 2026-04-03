@@ -12,12 +12,15 @@ A locally-hosted, offline-first application that treats text as a **pipeline**. 
 
 ## 3. Core Design Principles
 
-### Speed and Efficiency (Instant-First)
-- All transformations happen in memory, locally.
-- Minimal friction: keyboard-first navigation via a Command Palette (Ctrl+K).
-- Fast, reactive UI with real-time feedback.
+### Categorization & Discoverability
+- With 50+ tools, organization is key.
+- A categorized, collapsible **Quick Access Tools** panel gives users a one-click way to explore cases, coding styles, and utilities.
+- Toggling the panel allows for a "Focus Mode" solely for text manipulation.
 
-### Privacy and Offline-First
+### Speed and Efficiency (Instant-First)
+- All transformations happen in memory, locally, with near-zero latency.
+- Keyboard-first navigation: `Ctrl + K` Command Palette optimized for deep searches across the larger toolset.
+- `useDeferredValue` ensuring that large UI updates never block user input.
 - Data never leaves your machine.
 - Works in the browser, can be installed as a PWA, and accessed offline.
 - Ideal for sensitive data (API keys, logs, structured text).
