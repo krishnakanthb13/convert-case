@@ -3,6 +3,7 @@ import { useAppStore } from './store/useAppStore';
 import { runPipeline } from './core/engine';
 import { CommandPalette } from './components/CommandPalette';
 import { PipelineEditor } from './components/PipelineEditor';
+import { SavedPipelines } from './components/SavedPipelines';
 import { QuickActions } from './components/QuickActions';
 import { Copy, Download, FileText, Trash2, Moon, Sun } from 'lucide-react';
 
@@ -48,6 +49,7 @@ function App() {
   return (
     <div style={appContainerStyle}>
       <CommandPalette />
+      <SavedPipelines />
       
       <header style={headerStyle}>
         <div style={logoStyle}>

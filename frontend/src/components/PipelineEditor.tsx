@@ -1,9 +1,9 @@
 import React from 'react';
 import { useAppStore } from '../store/useAppStore';
-import { Play, X, Trash2, Plus } from 'lucide-react';
+import { Play, X, Trash2, Plus, Save } from 'lucide-react';
 
 export function PipelineEditor() {
-  const { pipeline, removeTransformFromPipeline, setPaletteOpen, clearPipeline } = useAppStore();
+  const { pipeline, removeTransformFromPipeline, setPaletteOpen, setSavedPipelinesOpen, clearPipeline } = useAppStore();
 
   return (
     <div style={containerStyle}>
@@ -18,8 +18,11 @@ export function PipelineEditor() {
                    <Trash2 size={16} strokeWidth={2.5} /> Clear All
                 </button>
              )}
+            <button style={{ ...btnStyle, backgroundColor: 'var(--success)' }} onClick={() => setSavedPipelinesOpen(true)}>
+              <Save size={16} strokeWidth={2.5} /> Saved
+            </button>
             <button style={btnStyle} onClick={() => setPaletteOpen(true)}>
-            <Plus size={16} strokeWidth={2.5} /> Add Transform (Ctrl+K)
+              <Plus size={16} strokeWidth={2.5} /> Add Transform (Ctrl+K)
             </button>
         </div>
       </div>
