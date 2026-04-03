@@ -1,8 +1,14 @@
 # FluxText
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+<p align="center">
+  <img src="./assets/release_v0_0_8.png" width="800" alt="FluxText v0.0.8 Release">
+</p>
 
-**FluxText** is a developer-first, offline-ready text transformation engine. It reimagines the classic "text converter" as a modular pipeline, allowing you to chain operations like case conversion, encoding, and cleaning in a single, fast workflow.
+<p align="center">
+	<a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
+</p>
+
+**FluxText** is a developer-first, offline-ready modular text transformation engine with 50+ tools and a lightning-fast pipeline.
 
 ---
 
